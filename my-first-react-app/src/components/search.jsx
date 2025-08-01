@@ -8,6 +8,8 @@ const Search =({searchTerm,setSearchTerm})=>{
             <div>
                 <img src={SerachImg} alt="search"/>
 
+                {/* <img src="./search.svg" alt="search"/> */}
+
                 <input
                 type="text"
                 placeholder="Search through thousands of movies"
