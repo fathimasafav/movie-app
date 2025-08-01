@@ -3,6 +3,7 @@ import Search from "./components/search.jsx";
 import Spineer from "./components/spinner.jsx";
 import MovieCard from "./components/MovieCard.jsx";
 
+import { useDebounce } from "react-use";
 
 const API_BASE_URL = "https://api.themoviedb.org/3/"
 
@@ -22,6 +23,11 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [movieList, setMovieList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('')
+
+
+  // Debounce is a serach term to prevent making too many API requests
+  useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm])
 
   const fetchMovies = async (query = '') => {
     setIsLoading(true);
@@ -58,9 +64,9 @@ const App = () => {
   }
 
   useEffect(() => {
-    fetchMovies(searchTerm);
+    fetchMovies(debouncedSearchTerm);
 
-  }, [searchTerm]);
+  }, [debouncedSearchTerm]);
 
   return (
     <main>
