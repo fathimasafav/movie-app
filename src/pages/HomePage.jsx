@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Search from "./components/search.jsx";
-import Spineer from "./components/spinner.jsx";
-import MovieCard from "./components/MovieCard.jsx";
+import Search from "../components/search.jsx";
+import Spineer from "../components/spinner.jsx";
+import MovieCard from "../components/MovieCard.jsx"
 
 import { useDebounce } from "react-use";
-import TrendingMovies from "./components/Trending.jsx";
+// import TrendingMovies from "./components/Trending.jsx";
+import TrendingMovies from "../components/Trending.jsx";
 
 const API_BASE_URL = "https://api.themoviedb.org/3/"
 
@@ -89,7 +90,7 @@ const Home = () => {
 
 
                 </header>
-                <TrendingMovies movies={movieList.slice(0, 10)} />
+                <TrendingMovies movies={movieList.slice(0, 7)} />
 
 
                 < section className="all-movies">

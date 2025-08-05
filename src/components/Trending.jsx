@@ -3,8 +3,8 @@ import React from "react";
 
 const TrendingMovies = ({ movies }) => {
     return <section>
-        <h1 className="text-left m-[0px] text-5xl font-extrabold">Trending Movies</h1>
-        <div className="flex flex-wrap gap-5 mt-4 overflow-x-auto">
+        <h1 className="text-left m-[0px] text-5xl font-extrabold ">Trending Movies</h1>
+        <div className="flex flex-wrap justify-between w-full h-full mt-4 overflow-x-auto">
             {movies.map((movie, index) =>
                 <div key={movie.id} className="relative">
                     <span className="absolute text-white left-0 rounded-xs  font-extrabold text-7xl mr-0">
@@ -19,4 +19,4 @@ const TrendingMovies = ({ movies }) => {
     </section >
 
 }
-export default TrendingMovies
+export default TrendingMovies;
